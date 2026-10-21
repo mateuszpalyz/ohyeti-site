@@ -3,18 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lost on the slope · Oh Yeti!</title>
+  <title>Page Not Found · Oh Yeti!</title>
   <meta name="robots" content="noindex">
   <link rel="icon" type="image/png" href="/img/favicon.png">
   <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Harold the goat ate the page. Daytime slope, big goat, chewed paper. */
+    body { background: var(--snow); }
+    .harold { max-width: none; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 32px 16px; text-align: center;
+      background: linear-gradient(var(--night), var(--sky) 42%, #8fb5ea 58%, var(--snow) 58.2%); }
+    .harold .big { margin: 0; font-family: "Lilita One", sans-serif; font-size: clamp(96px, 24vw, 180px); line-height: 0.9; color: var(--gold); -webkit-text-stroke: 8px var(--ink); paint-order: stroke fill; text-shadow: 0 8px 0 var(--ink); }
+    .harold .tagline { margin: 12px 0 0; }
+    .scene { position: relative; width: min(520px, 100%); height: clamp(220px, 40vw, 280px); margin-top: 22px; }
+    .goat { position: absolute; left: 50%; bottom: 0; width: clamp(130px, 24vw, 170px); transform: translateX(-50%); animation: chew 0.5s steps(2) infinite; }
+    .bubble { position: absolute; left: calc(50% + 60px); top: 0; background: #fff; border: 4px solid var(--ink); border-radius: 18px; padding: 8px 14px; font-weight: 700; font-size: clamp(15px, 2.4vw, 18px); white-space: nowrap; box-shadow: 0 4px 0 rgba(29, 35, 64, 0.3); }
+    .bubble::after { content: ""; position: absolute; left: 18px; bottom: -14px; border: 7px solid transparent; border-top-color: var(--ink); }
+    .scrap { position: absolute; width: 26px; height: 32px; background: #fff; border: 3px solid var(--ink); clip-path: polygon(0 0, 100% 8%, 88% 100%, 12% 88%); }
+    .scrap.one { left: 22%; bottom: 18%; transform: rotate(-18deg); }
+    .scrap.two { right: 20%; bottom: 8%; transform: rotate(24deg); width: 20px; height: 24px; }
+    .scrap.three { left: 34%; bottom: 2%; transform: rotate(8deg); width: 16px; height: 20px; }
+    .note { max-width: 420px; margin: 22px auto 0; color: var(--ink); font-size: 19px; }
+    .harold .pill { margin-top: 22px; color: var(--ink); text-decoration: none; }
+    @keyframes chew { 50% { transform: translateX(-50%) translateY(-3px); } }
+    @media (prefers-reduced-motion: reduce) { .goat { animation: none; } }
+    @media (max-width: 480px) { .bubble { left: auto; right: 0; } }
+  </style>
 </head>
 <body>
-  <header class="hero compact">
-    <p class="title"><a href="/">OH YETI!</a></p>
-    <p class="tagline">This page slid off the piste.</p>
-  </header>
-  <main>
-    <div class="badges"><a class="pill" href="/">Back to the top</a></div>
+  <main class="harold">
+    <p class="big">404</p>
+    <p class="tagline">Harold ate this page.</p>
+    <div class="scene">
+      <span class="scrap one"></span><span class="scrap two"></span><span class="scrap three"></span>
+      <div class="bubble">Mmm. Paper.</div>
+      <img class="goat pixel" src="/img/goat.png" alt="Harold the mountain goat, chewing">
+    </div>
+    <p class="note">He minds his own business, mostly. Whatever was here is gone, but the rest of the mountain is fine.</p>
+    <a class="pill" href="/">Back to the top</a>
   </main>
 </body>
 </html>
