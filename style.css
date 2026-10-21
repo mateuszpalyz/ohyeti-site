@@ -1,0 +1,312 @@
+@font-face {
+  font-family: "Lilita One";
+  src: url("fonts/LilitaOne-Regular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fredoka";
+  src: url("fonts/Fredoka.ttf") format("truetype");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+:root {
+  --night: #27458f;
+  --sky: #3e69b7;
+  --sky-light: #7ea8e4;
+  --snow: #e4ecfb;
+  --snow-deep: #b6c8ee;
+  --ink: #1d2340;
+  --ink-soft: #46507a;
+  --gold: #ffd24a;
+  --gold-deep: #e9a70f;
+  --card: #ffffff;
+  --button: #d4e8ff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--snow);
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--snow);
+  font-family: "Fredoka", ui-rounded, system-ui, sans-serif;
+  font-size: 18px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+img.pixel {
+  image-rendering: pixelated;
+}
+
+a {
+  color: var(--night);
+  font-weight: 600;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+/* ------------------------------------------------------------ hero */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(28px, 6vw, 56px) 16px clamp(8px, 2vw, 20px);
+  text-align: center;
+  background: linear-gradient(var(--night), var(--sky) 55%, #80aae6);
+}
+
+.hero.compact {
+  padding-bottom: 28px;
+  background: linear-gradient(var(--night), var(--sky));
+}
+
+/* The splash-screen mountains (with the stolen banana) as a band under the
+   title. Shown whole; on wide screens it stops growing and its edges fade
+   into matching colours instead of cropping the banana. */
+.vista-wrap {
+  background: linear-gradient(#80aae6 0%, #7a90cc 35%, #5a72b0 80%, var(--snow) 96%);
+}
+
+.vista {
+  display: block;
+  width: 100%;
+  max-width: 1080px;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media (min-width: 1081px) {
+  .vista {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+    mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  }
+}
+
+.hero .icon {
+  width: 96px;
+  height: 96px;
+  border-radius: 22px;
+  box-shadow: 0 6px 0 rgba(10, 20, 60, 0.35);
+}
+
+.title {
+  margin: 14px 0 0;
+  font-family: "Lilita One", "Fredoka", sans-serif;
+  font-weight: 400;
+  font-size: clamp(56px, 13vw, 112px);
+  line-height: 1;
+  letter-spacing: 1px;
+  color: var(--gold);
+  -webkit-text-stroke: clamp(4px, 1vw, 7px) var(--ink);
+  paint-order: stroke fill;
+  text-shadow: 0 clamp(4px, 1vw, 7px) 0 var(--ink);
+}
+
+.title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.hero.compact .title {
+  font-size: clamp(44px, 9vw, 72px);
+}
+
+.tagline {
+  margin: 14px 0 0;
+  max-width: 560px;
+  color: #fff;
+  font-weight: 600;
+  font-size: clamp(18px, 3.4vw, 24px);
+  text-shadow: 0 2px 0 rgba(10, 20, 60, 0.55);
+}
+
+/* ------------------------------------------------------------ content */
+
+main {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 16px 48px;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  margin: -30px 0 0;
+  position: relative;
+  text-align: center;
+}
+
+.pill {
+  display: inline-block;
+  padding: 12px 22px;
+  border: 4px solid var(--ink);
+  border-radius: 18px;
+  background: var(--gold);
+  box-shadow: 0 5px 0 var(--ink);
+  font-family: "Lilita One", "Fredoka", sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+}
+
+.pill.soft {
+  background: var(--button);
+}
+
+.showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+  gap: 40px;
+  align-items: center;
+  margin-top: 56px;
+}
+
+.phone {
+  width: 100%;
+  max-width: 300px;
+  justify-self: center;
+  border: 6px solid var(--ink);
+  border-radius: 34px;
+  overflow: hidden;
+  background: var(--ink);
+  box-shadow: 0 8px 0 rgba(29, 35, 64, 0.35);
+}
+
+.phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-family: "Lilita One", "Fredoka", sans-serif;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 1.15;
+  color: var(--night);
+}
+
+.features {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.features li {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: start;
+}
+
+.features img {
+  width: 40px;
+  height: auto;
+  margin-top: 2px;
+}
+
+.features b {
+  display: block;
+  font-size: 19px;
+}
+
+.features span {
+  color: var(--ink-soft);
+}
+
+.card {
+  margin-top: 48px;
+  padding: 28px clamp(20px, 4vw, 36px);
+  background: var(--card);
+  border: 4px solid var(--ink);
+  border-radius: 24px;
+  box-shadow: 0 6px 0 rgba(29, 35, 64, 0.25);
+}
+
+.card p:first-of-type {
+  margin-top: 0;
+}
+
+.faq h3 {
+  margin: 22px 0 4px;
+  font-size: 19px;
+}
+
+.faq p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.contact {
+  font-size: 20px;
+}
+
+/* ------------------------------------------------------------ privacy */
+
+.prose h2 {
+  margin-top: 32px;
+  font-size: 26px;
+}
+
+.prose h2:first-child {
+  margin-top: 0;
+}
+
+.prose p,
+.prose li {
+  color: var(--ink);
+}
+
+.prose ul {
+  padding-left: 22px;
+}
+
+.prose li + li {
+  margin-top: 6px;
+}
+
+.updated {
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+/* ------------------------------------------------------------ footer */
+
+footer {
+  padding: 28px 16px 40px;
+  background: var(--snow-deep);
+  text-align: center;
+  color: var(--ink-soft);
+  font-size: 16px;
+}
+
+footer nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 720px) {
+  .showcase {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .phone {
+    max-width: 260px;
+  }
+}
