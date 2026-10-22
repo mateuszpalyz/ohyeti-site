@@ -1,8 +1,10 @@
-/* WOFF first (smaller), TTF as a fallback. The title font is tiny and
-   preloaded, so it blocks briefly instead of flashing a fallback font. */
+/* Lilita One is served as the original TTF: its licence reserves the name
+   "Lilita", and the OFL counts a format conversion as a modified version.
+   It is tiny and preloaded, so it blocks briefly instead of flashing a
+   fallback font. Fredoka (no reserved name) is converted to WOFF. */
 @font-face {
   font-family: "Lilita One";
-  src: url("fonts/LilitaOne-Regular.woff") format("woff"), url("fonts/LilitaOne-Regular.ttf") format("truetype");
+  src: url("fonts/LilitaOne-Regular.ttf") format("truetype");
   font-display: block;
 }
 
