@@ -184,7 +184,8 @@ main {
   position: relative;
 }
 
-/* A camera pill at the top of the screen, like current phones have. */
+/* A camera pill at the top of the screen, like current phones have, in the
+   same ink as the frame. */
 .phone::after, .ha-phone::after {
   content: "";
   position: absolute;
@@ -194,7 +195,7 @@ main {
   height: 3.4%;
   transform: translateX(-50%);
   border-radius: 999px;
-  background: #0b0e1a;
+  background: var(--ink);
 }
 
 .phone img {
