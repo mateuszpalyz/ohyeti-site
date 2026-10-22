@@ -1,12 +1,14 @@
+/* WOFF first (smaller), TTF as a fallback. The title font is tiny and
+   preloaded, so it blocks briefly instead of flashing a fallback font. */
 @font-face {
   font-family: "Lilita One";
-  src: url("fonts/LilitaOne-Regular.ttf") format("truetype");
-  font-display: swap;
+  src: url("fonts/LilitaOne-Regular.woff") format("woff"), url("fonts/LilitaOne-Regular.ttf") format("truetype");
+  font-display: block;
 }
 
 @font-face {
   font-family: "Fredoka";
-  src: url("fonts/Fredoka.ttf") format("truetype");
+  src: url("fonts/Fredoka.woff") format("woff"), url("fonts/Fredoka.ttf") format("truetype");
   font-weight: 300 700;
   font-display: swap;
 }
@@ -174,6 +176,23 @@ main {
   border-radius: 40px;
   background: var(--ink);
   box-shadow: 0 8px 0 rgba(29, 35, 64, 0.35);
+}
+
+.phone, .ha-phone {
+  position: relative;
+}
+
+/* A camera pill at the top of the screen, like current phones have. */
+.phone::after, .ha-phone::after {
+  content: "";
+  position: absolute;
+  top: calc(9px + 2.6%);
+  left: 50%;
+  width: 30%;
+  height: 3.4%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #0b0e1a;
 }
 
 .phone img {
