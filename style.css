@@ -94,6 +94,7 @@ a {
   .ha-inner { grid-template-columns: 1fr; text-align: center; }
   .ha-copy, .ha-copy .title, .ha-copy .tagline { text-align: center; padding-bottom: 0; }
   .ha-copy .pitch { margin: 12px auto 22px; }
+  .stores { justify-content: center; }
   .ha-phone { width: min(240px, 62vw); padding: 7px; border-radius: 36px; transform: rotate(3deg); margin-bottom: 36px; }
   .ha-phone img { border-radius: 28px; }
   .ha-banana { width: 48px; top: 54%; right: 8%; }
@@ -158,8 +159,37 @@ main {
   letter-spacing: 0.5px;
 }
 
+/* Store links under the hero pitch: the live store as a gold button, the
+   one still to come as a quiet pill next to it. */
+.stores {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+}
+
+a.pill.store {
+  color: var(--ink);
+  text-decoration: none;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+a.pill.store:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 7px 0 var(--ink);
+}
+
+a.pill.store:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--ink);
+}
+
 .pill.soft {
   background: var(--button);
+  font-size: 16px;
+  padding: 8px 16px;
+  border-width: 3px;
+  box-shadow: 0 3px 0 var(--ink);
 }
 
 .showcase {
