@@ -159,8 +159,7 @@ main {
   letter-spacing: 0.5px;
 }
 
-/* Store links under the hero pitch: the live store as a gold button, the
-   one still to come as a quiet pill next to it. */
+/* Store links under the hero pitch: one gold button per store. */
 .stores {
   display: flex;
   flex-wrap: wrap;
@@ -182,14 +181,6 @@ a.pill.store:hover {
 a.pill.store:active {
   transform: translateY(3px);
   box-shadow: 0 2px 0 var(--ink);
-}
-
-.pill.soft {
-  background: var(--button);
-  font-size: 16px;
-  padding: 8px 16px;
-  border-width: 3px;
-  box-shadow: 0 3px 0 var(--ink);
 }
 
 .showcase {
