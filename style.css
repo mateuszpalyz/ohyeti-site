@@ -168,9 +168,33 @@ main {
 }
 
 a.pill.store {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 176px;
+  padding: 8px 20px 10px;
   color: var(--ink);
+  font-size: 24px;
+  line-height: 1.05;
   text-decoration: none;
   transition: transform 0.1s, box-shadow 0.1s;
+}
+
+/* The small "Download on the" / "Get it on" line above the store name. */
+a.pill.store small {
+  margin-bottom: 2px;
+  font-family: "Fredoka", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+/* Phones: both buttons side by side on one row, a little smaller. */
+@media (max-width: 760px) {
+  .stores { flex-wrap: nowrap; gap: 10px; }
+  a.pill.store { min-width: 0; padding: 8px 14px 10px; font-size: 20px; }
+  a.pill.store small { font-size: 10px; }
 }
 
 a.pill.store:hover {
